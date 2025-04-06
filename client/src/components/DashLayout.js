@@ -4,13 +4,14 @@ import DashFooter from './DashFooter';
 
 const DashLayout = () => {
     return (
-        <>
+        <div className="dash-container">
             <DashHeader />
-            <div classname="dash-container">
+            <div className="dash">
                 <Outlet />
             </div>
             <DashFooter />
-        </>
+        </div>
     )
 }
+
 export default DashLayout

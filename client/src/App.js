@@ -6,8 +6,9 @@ import Login from './features/auth/Login';
 import SignUp from './features/auth/SignUp';
 import DashLayout from './components/DashLayout';
 import Welcome from './features/auth/Welcome';
-import Questions from './features/questions/QuestionsList';
-import Statistics from './features/statistics/StatisticsList';
+import Questions from './features/questions/Questions';
+import Statistics from './features/statistics/Statistics';
+//import RequireAuth from './features/auth/RequireAuth';
 
 function App() {
   return (
@@ -15,11 +16,16 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<Public />} />
         
-        {/* Logging in or creating an account */}
+        {/* Public routes */}
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
 
-        <Route path="dash" element={<DashLayout />}>
+        {/* Protected routes */}
+        <Route path="dash" element={
+          //<RequireAuth>
+          <DashLayout />
+          //</RequireAuth> 
+        }>
           <Route index element={<Welcome />} />
           <Route path="questions" element={<Questions />} />
           <Route path="statistics" element={<Statistics />} />

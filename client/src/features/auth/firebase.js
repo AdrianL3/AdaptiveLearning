@@ -1,5 +1,5 @@
 // src/features/auth/firebase.js
-import { initializeApp } from 'firebase/app';
+import { initializeApp, getApps } from 'firebase/app';
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
@@ -12,7 +12,15 @@ const firebaseConfig = {
   measurementId: "G-PTCJFTF2XF"
 };
 
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+// Initialize Firebase
+let app;
+if (!getApps().length) {
+  app = initializeApp(firebaseConfig);
+} else {
+  app = getApps()[0];
+}
 
-export default app;
+// Initialize Auth
+const auth = getAuth(app);
+
+export { auth, app };
