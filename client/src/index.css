@@ -6,6 +6,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+#logo {
+  width: 100px;
+  height: auto;
+  margin: 1em auto;
+  display: block;
+}
 * {
   margin: 0;
   padding: 0;
