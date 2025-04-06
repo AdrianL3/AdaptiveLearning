@@ -136,3 +136,86 @@
 .welcome-text li {
   margin-bottom: 0.75rem;
 }
+
+
+/* This is were the css for the login start */
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6f8;
+}
+
+.form-box {
+  background: #FEF6DC;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  width: 320px;
+}
+
+.form-title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.input-field label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.input-field input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #4B7BEC;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary-btn:hover {
+  background-color: #463cd1;
+}
+
+.text-link {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.text-link a {
+  color: #4B7BEC;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.nav-links {
+  display: flex;
+  align-items: center; /* Vertically center-align the elements */
+}
+
+.nav-links p {
+  margin-right: 10px; /* Space between text and button */
+}
