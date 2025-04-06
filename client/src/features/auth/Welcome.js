@@ -4,8 +4,9 @@ const Welcome = () => {
     const today = new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'long' }).format(date)
 
     const content = (
+        //Add and edit the HTML here for the welcome page
         <section className="welcome">
-
+            
             <p>{today}</p>
 
             <h1>Welcome!</h1>
