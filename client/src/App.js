@@ -3,6 +3,7 @@ import './App.css';
 import Layout from './components/Layout';
 import Public from './components/Public';
 import Login from './features/auth/Login';
+import SignUp from './features/auth/SignUp';
 import DashLayout from './components/DashLayout';
 import Welcome from './features/auth/Welcome';
 import Questions from './features/questions/QuestionsList';
@@ -13,7 +14,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Public />} />
+        
+        {/* Logging in or creating an account */}
         <Route path="login" element={<Login />} />
+        <Route path="signup" element={<SignUp />} />
 
         <Route path="dash" element={<DashLayout />}>
           <Route index element={<Welcome />} />

@@ -3,6 +3,8 @@ import logo from '../NavigationLogo.png'; // Ensure the path is correct
 
 const DashHeader = () => {
     const content = (
+        //edit this for the header
+        //TO DO: add buttons
         <header className="dash-header">
             <section className="public">
                 <nav className="navbar">
