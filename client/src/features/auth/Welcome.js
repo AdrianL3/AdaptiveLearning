@@ -1,19 +1,33 @@
 import { Link } from 'react-router-dom'
 const Welcome = () => {
-    const date = new Date()
-    const today = new Intl.DateTimeFormat('en-US', { dateStyle: 'full', timeStyle: 'long' }).format(date)
 
     const content = (
-        <section className="welcome">
+        <section className="profile">
+            <div className="profile-section">
+                <h1>Profile and Statistics</h1>
 
-            <p>{today}</p>
+                <p>Unique User Id: </p>
 
-            <h1>Welcome!</h1>
+                <p>Email Address:</p>
 
-            <p><Link to="/dash/questions">Questions</Link></p>
+                <p>Display Name: </p>
+            </div>
+            <div className="mastery-section">
+                <h2>Mastery Statistics</h2>
+                <div className="mastery-stats">
+                    <label for="algebra">Algebra</label>
+                    <p><progress id="algebra" value="0" max="100"></progress></p>
+                    <label for="dataAnalysis">Data Analysis, Statistics, and Probability</label>
+                    <p><progress id="dataAnalysis" value="0" max="100"></progress></p>
+                    <label for="geometry">Geometry</label>
+                    <p><progress id="geometry" value="0" max="100"></progress></p>
+                    <label for="measurement">Measurement</label>
+                    <p><progress id="measurement" value="0" max="100"></progress></p>
+                    <label for="numberProperties">Number Properties and Operations</label>
+                    <p><progress id="numberProperties" value="0" max="100"></progress></p>                </div>
 
-            <p><Link to="/dash/statistics">View Statistics</Link></p>
-
+                <Link to="/modules" className="btn btn-primary">Continue Learning</Link>
+            </div>
         </section>
     )
 

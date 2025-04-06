@@ -4,15 +4,18 @@ import logo from '../NavigationLogo.png'; // Ensure the path is correct
 const DashHeader = () => {
     const content = (
         <header className="dash-header">
-            <div className="dash-header__container">
-                <Link to="/dash">
-                    <a href="/dash"><img src={logo}></img></a>
-                    <h1 className="dash-header__title">notes</h1>
-                </Link>
-                <nav className="dash-header__nav">
-                    {/* add nav buttons later */}
+            <section className="public">
+                <nav className="navbar">
+                    <div className="logo-section">
+                        <a href="/"><img src={logo} alt="Master IQ Logo" className="logo" /> </a>
+                    </div>
+                    <div className="nav-links">
+                        <Link to="/" className="nav-btn">Home</Link>
+                        <Link to="/modules" className="nav-btn">Modules</Link>
+                        <Link to="/dash" className="nav-btn">Profile</Link>
+                    </div>
                 </nav>
-            </div>
+            </section>
         </header>
     )
 

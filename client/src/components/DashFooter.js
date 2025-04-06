@@ -26,8 +26,8 @@ const DashFooter = () => {
         // Add and edit the HTML here for the footer
         <footer className="dash-footer">
             {goHomeButton}
-            <p>Current User:</p>
-            <p>Status:</p>
+            <p></p>
+            <p></p>
         </footer>
     )
     return content
