@@ -52,7 +52,7 @@ def get_question():
         return jsonify({'error': 'No questions available'}), 404
         
     # Add the full URL to the image path
-    question['image_url'] = f"http://localhost:5000/static/{question['image_url']}"
+    question['image_url'] = f"http://localhost:64000/static/{question['image_url']}"
     
     # Remove the correct answer from the response
     correct_answer = question.pop('correct_answer')
@@ -114,8 +114,7 @@ def get_user_progress_endpoint():
     return jsonify(progress)
 
 if __name__ == '__main__':
-    app.run(port=64000)
-    app.run(debug=True)
+    app.run(port=64000, debug = True)
 
 
 

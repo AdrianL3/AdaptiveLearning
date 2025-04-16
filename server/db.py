@@ -221,16 +221,18 @@ def import_questions():
     finally:
         conn.close()
 
+CSV_FILE = 'data/questionsData.csv'
+
 def get_question_by_difficulty(topic: str, difficulty: int) -> Optional[Dict]:
     """
     Get a random question for the given topic and difficulty level.
     Returns None if no questions are available.
     """
-    conn = sqlite3.connect(DB_FILE)
-    cursor = conn.cursor()
+    #conn = sqlite3.connect(DB_FILE)
+    #cursor = conn.cursor()
     
-    # Get a random question within the difficulty range
-    cursor.execute("""
+    """# Get a random question within the difficulty range
+    cursor.execute()
     SELECT 
         question_number,
         question_text,
@@ -247,24 +249,29 @@ def get_question_by_difficulty(topic: str, difficulty: int) -> Optional[Dict]:
     AND difficulty = ?
     ORDER BY RANDOM()
     LIMIT 1
-    """, (topic, difficulty))
+     (topic, difficulty)) """
+        
+    questions = []
+
+    # Read the CSV file
+    with open(CSV_FILE, 'r') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            if row['topic'] == topic and int(row['difficulty']) == difficulty:
+                questions.append(row)
+                
+    #question = cursor.fetchone()
+    #conn.close()
     
-    question = cursor.fetchone()
-    conn.close()
-    
-    if question:
+    if questions:
+        question = random.choice(questions)
         return {
-            'question_number': question[0],
-            'question_text': question[1],
-            'option_a': question[2],
-            'option_b': question[3],
-            'option_c': question[4],
-            'option_d': question[5],
-            'option_e': question[6],
-            'correct_answer': question[7],
-            'difficulty': question[8],
-            'topic': question[9],
-            'image_url': f'/static/{question[0]}.png'  # Updated image path
+            'question_number': question['question_number'],
+            'question_text': question['question_text'],
+            'correct_answer': question['correct_answer'],
+            'difficulty': question['difficulty'],
+            'topic': question['topic'],
+            'image_url': f'/static/{question["question_number"]}.png'  # Updated image path
         }
     return None
 

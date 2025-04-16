@@ -9,6 +9,7 @@ from pydantic import BaseModel, Field, field_validator
 import firebase_admin
 from firebase_admin import credentials, auth
 from firebase_admin import exceptions as firebase_exceptions
+from flask import Blueprint, request, jsonify
 import sqlite3
 import logging
 import os
@@ -430,3 +431,8 @@ async def get_progress(
     except sqlite3.Error as e:
         logger.error(f"Database error while fetching progress: {str(e)}")
         raise 
+    
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=64000)
